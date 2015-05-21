@@ -75,8 +75,33 @@ public class MultiXWalkViewActivity extends Activity {
      * Using the Platform WebView, each of these devices can easily reach 50 WebViews in intel.com.
      * The performance gap between XWalkView is tenfold.
      *
+     * Baseline (XWalk 11):
+     * Moto G @4.4.4 (API 19)
+     * => 12 webviews -> Crash as soon as start rendering
+     * => 11 webviews -> Crash
+     * => 10 webviews -> Crash
+     * => 09 webviews -> Crash
+     * => 08 webviews -> Crash
+     * => 07 webviews -> Crash
+     * => 06 webviews -> Crash
+     * => 05 webviews -> Works.. and I can interact with all webviews (i.e open the menu)
+     *
+     * Samsung S3 @ 4.3
+     * => 12 webviews -> Crash as soon as start rendering
+     * => 11 webviews -> Crash
+     * => 10 webviews -> Crash
+     * => 09 webviews -> Crash
+     * => 08 webviews -> Crash
+     * => 07 webviews -> Crash
+     * => 06 webviews -> Works
+     * => 05 webviews -> Works.. and I can interact with all webviews (i.e open the menu)
+     *
+     *
+     *
+     * Tests on XWalk 13:
+     * 
      */
-    private final static int HOW_MANY = 12;
+    private final static int HOW_MANY = 6;
 
     private final static int WIDTH = 200;
     private final static int HEIGHT = 300;
@@ -94,6 +119,7 @@ public class MultiXWalkViewActivity extends Activity {
         } else {
             loadPlatformWebViews(root);
         }
+
 
         setContentView(root);
     }
