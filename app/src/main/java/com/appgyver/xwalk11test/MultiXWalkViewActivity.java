@@ -76,37 +76,31 @@ public class MultiXWalkViewActivity extends Activity {
      * The performance gap between XWalkView is tenfold.
      *
      * Baseline (XWalk 11):
-     * Moto G @4.4.4 (API 19)
-     * => 12 webviews -> Crash as soon as start rendering
-     * => 11 webviews -> Crash
-     * => 10 webviews -> Crash
-     * => 09 webviews -> Crash
-     * => 08 webviews -> Crash
-     * => 07 webviews -> Crash
+     * Moto G @4.4.4 (API 19) -> 5 WebViews
      * => 06 webviews -> Crash
      * => 05 webviews -> Works.. and I can interact with all webviews (i.e open the menu)
      *
-     * Samsung S3 @ 4.3
-     * => 12 webviews -> Crash as soon as start rendering
-     * => 11 webviews -> Crash
-     * => 10 webviews -> Crash
-     * => 09 webviews -> Crash
-     * => 08 webviews -> Crash
+     * Samsung S3 @ 4.3  -> 06 webviews
      * => 07 webviews -> Crash
      * => 06 webviews -> Works
      * => 05 webviews -> Works.. and I can interact with all webviews (i.e open the menu)
      *
-     *
-     *
      * Crosswalk 13
      * ============
+     * Moto G @4.4.4 (API 19)  -> 6 WebViews
+     * => 08 webviews -> crash
+     * => 07 webviews -> crash when start rendering
+     * => 06 webviews -> works  ... chashes after a while interacting with webviews
      *
+     * Samsung S3 @ 4.3 -> 7 WebViews
+     * => 08 webviews -> crash
+     * => 07 webviews -> Works  ... chashes after a while interacting with webviews
      *
      */
-    private final static int HOW_MANY = 6;
+    private final static int HOW_MANY = 8;
 
-    private final static int WIDTH = 200;
-    private final static int HEIGHT = 300;
+    private final static int WIDTH = 250;
+    private final static int HEIGHT = 350;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -156,10 +150,10 @@ public class MultiXWalkViewActivity extends Activity {
     }
 
     private int getY(int i) {
-        return (i % 5) * 100;
+        return ((i % 5) * 100) + 100;
     }
 
     private int getX(int i) {
-        return i * 25;
+        return i * 30;
     }
 }
