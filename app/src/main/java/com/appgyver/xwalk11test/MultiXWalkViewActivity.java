@@ -98,8 +98,10 @@ public class MultiXWalkViewActivity extends Activity {
      *
      *
      *
-     * Tests on XWalk 13:
-     * 
+     * Crosswalk 13
+     * ============
+     *
+     *
      */
     private final static int HOW_MANY = 6;
 
